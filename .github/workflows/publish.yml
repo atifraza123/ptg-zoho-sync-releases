@@ -1,0 +1,25 @@
+name: publish
+# When a new installer is added under installers/, publish it as a GitHub release
+# (tag v<version>, notes from installers/notes-<version>.md).
+on:
+  push:
+    branches: [main]
+    paths: ["installers/**"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish every installer that has no release yet
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for exe in installers/PTG-Zoho-Sync-Setup-*.exe; do
+            v=$(basename "$exe" .exe); v=${v#PTG-Zoho-Sync-Setup-}
+            if gh release view "v$v" >/dev/null 2>&1; then echo "v$v already published"; continue; fi
+            notes="installers/notes-$v.md"; [ -f "$notes" ] || { echo "Install: run $(basename "$exe")." > /tmp/n.md; notes=/tmp/n.md; }
+            gh release create "v$v" "$exe" "$exe.sha256" --title "PTG Zoho Sync $v" --notes-file "$notes" --latest
+          done

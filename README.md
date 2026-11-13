@@ -26,3 +26,6 @@ Each release also has a `.sha256` file you can use to check the download:
 Support: PTG Consultant LLC, Dubai, https://ptgconsultant.com
 
 This repository holds the installers only. The source code is private.
+
+## All versions
+Each installer is also kept in the [installers](installers) folder.
