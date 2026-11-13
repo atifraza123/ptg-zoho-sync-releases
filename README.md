@@ -3,7 +3,7 @@
 # PTG Zoho Sync - downloads
 
 Windows desktop app by **PTG Consultant LLC** that syncs **Odoo**, **Microsoft Dynamics 365 Business
-Central** and **QuickBooks Desktop** with **Zoho Books**, in both directions:
+Central**, **QuickBooks Desktop** and **QuickBooks Online** with **Zoho Books**, in both directions:
 
 * sales invoices, credit notes, customers and payments go to Zoho Books;
 * e-invoice statuses (Zoho as the UAE e-invoicing ASP) and supplier bills come back into your ERP.
@@ -15,7 +15,11 @@ Central** and **QuickBooks Desktop** with **Zoho Books**, in both directions:
 3. Start **PTG Zoho Sync** from the Start menu or the desktop shortcut, then follow the
    **Overview** page: Source ERP → Zoho Books → Settings & tax mapping → Preview → Sync now.
 
-Requirements: Windows 10 or 11 (64-bit). For QuickBooks Desktop, use version 2022 or newer, on the same PC.
+Requirements: Windows 10 or 11.
+* **QuickBooks Desktop:** Pro, Premier, Accountant or Enterprise **2009 or newer** (US, UK and Canadian
+  editions; 32-bit and 64-bit QuickBooks), on the same PC as the app.
+* **QuickBooks Online:** a free Intuit developer app (Client ID / Client Secret) - the steps are on the
+  app's Source ERP page.
 
 **Updating:** run the newer Setup.exe. Your profiles, keys and sync history in
 `%APPDATA%\OdooZohoSync` are kept. **Uninstalling** (Settings → Apps) keeps them too.
